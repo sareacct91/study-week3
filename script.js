@@ -10,16 +10,34 @@ function generatePassword() {
   let tempPassword = '';
   let selectionStr = '';
 
-  let length = prompt('length: ');    // return string
-  let isLower = confirm("lower");       // return true or false
-  let isUpper = confirm("upper");       // return true or false
-  let isNumber = confirm("number");     // return true or false
-  let isSpecial = confirm("special");   // return true or false
+  let length = prompt('Password Length (8 - 128): ');
 
-  selectionStr += lowerCaseStr;
+  if (length < 8 || length > 128) {
+    alert("Please input a number between 8-128!");
+    return generatePassword();
+  }
 
-  for (let i = 0; i < length; i++) {}
+  if (confirm("Include Lowercase?  Yes/No")) {
+    selectionStr += lowerCaseStr;
+  }
+  if (confirm("Include Uppercase?  Yes/No")) {
+    selectionStr += upperCaseStr;
+  }
+  if (confirm("Include Numbers?  Yes/No")) {
+    selectionStr += numericStr;
+  }
+  if (confirm("Special Characters?  Yes/No")) {
+    selectionStr += specialStr;
+  }
 
+  if (selectionStr === '') {
+    alert("No possible Password with the options picked!");
+    return generatePassword();
+  }
+
+  for (let i = 0; i < length; i++) {
+    tempPassword += selectionStr[Math.floor(Math.random() * selectionStr.length)];
+  }
 
   return tempPassword;
 }
@@ -30,7 +48,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
