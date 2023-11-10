@@ -18,18 +18,11 @@ function generatePassword() {
     return generatePassword();
   }
   // Get user selection
-  if (confirm("Include Lowercase?  Yes/No")) {
-    selectionStr += lowerCaseStr;
-  }
-  if (confirm("Include Uppercase?  Yes/No")) {
-    selectionStr += upperCaseStr;
-  }
-  if (confirm("Include Numbers?  Yes/No")) {
-    selectionStr += numericStr;
-  }
-  if (confirm("Special Characters?  Yes/No")) {
-    selectionStr += specialStr;
-  }
+  selectionStr += confirm("Include Lowercase?  Yes/No") ? lowerCaseStr : '';
+  selectionStr += confirm("Include Uppercase?  Yes/No") ? upperCaseStr : '';
+  selectionStr += confirm("Include Numbers?  Yes/No") ? numericStr : '';
+  selectionStr += confirm("Include Special Characters?  Yes/No") ? specialStr : '';
+  
   // Check for valid selections, if not ask for selctions again
   if (selectionStr === '') {
     alert("No possible Password with the options picked!");
