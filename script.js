@@ -7,8 +7,8 @@ function generatePassword() {
   const numericStr = "0123456789";
   const specialStr = "!@#$%^&*()_-=+[]{};:'`~,<.>/?|";
   
-  let tempPassword = '';
-  let selectionStr = '';
+  let tempPassword = "";
+  let selectionStr = "";
 
   // Get user selection
   let length = prompt('Password Length (8 - 128): ');
