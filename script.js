@@ -1,12 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-const lowerCaseStr = "abcdefghijklmnopqrstuvwxyz";
-const upperCaseStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numericStr = "0123456789";
-const specialStr = "!@#$%^&*()_-=+[]{};:'`~,<.>/?|";
-
 function generatePassword() {
+  const lowerCaseStr = "abcdefghijklmnopqrstuvwxyz";
+  const upperCaseStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numericStr = "0123456789";
+  const specialStr = "!@#$%^&*()_-=+[]{};:'`~,<.>/?|";
+  
   let tempPassword = '';
   let selectionStr = '';
 
